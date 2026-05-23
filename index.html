@@ -49,6 +49,8 @@
             list-style: none;
             display: flex;
             gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         nav ul li a {
             font-size: 15px;
@@ -61,7 +63,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://uniofmora-my.sharepoint.com/:i:/g/personal/devindakadhd_22_uom_lk/IQB--_EGMo7YQqNmqiBK61PoAQdj_OtiJIWpaPqLnR2OMhY?e=q5yhld/1500x800') center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1500x800') center/cover;
             color: #fff;
             text-align: center;
             padding: 100px 20px;
@@ -127,7 +129,7 @@
             display: flex;
             align-items: center;
             background: #fff;
-            padding: 80px 50px 50px 50px; /* Menu එකට යට නොවීම සඳහා padding වෙනස් කර ඇත */
+            padding: 80px 50px 50px 50px;
             gap: 40px;
         }
         .about-image {
@@ -142,6 +144,51 @@
         .about-content p {
             margin-bottom: 15px;
             text-align: justify;
+        }
+
+        /* Gallery Section */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 0 50px 50px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05); /* පින්තූරය උඩට mouse එක ගෙනගිය විට විශාල වීම */
+        }
+
+        /* Location Section */
+        .location-section {
+            display: flex;
+            align-items: center;
+            padding: 0 50px 50px;
+            gap: 40px;
+            background: #fff;
+        }
+        .location-details {
+            flex: 1;
+        }
+        .location-details h3 {
+            color: #2980b9;
+            margin-bottom: 15px;
+        }
+        .location-details p {
+            margin-bottom: 10px;
+        }
+        .map-container {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         /* Contact Section */
@@ -181,7 +228,7 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            header, .about-section, .contact-section {
+            header, .about-section, .contact-section, .location-section {
                 flex-direction: column;
                 padding: 20px;
             }
@@ -191,6 +238,7 @@
                 margin-top: 15px;
             }
             .hero h1 { font-size: 28px; }
+            .gallery-container { padding: 0 20px 30px; }
         }
     </style>
 </head>
@@ -203,6 +251,8 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#process">Our Process</a></li>
                 <li><a href="#about">About Teacher</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#location">Location</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -246,6 +296,36 @@
         </div>
     </section>
 
+    <h2 id="gallery" class="section-title">Class Gallery</h2>
+    <section class="gallery-container">
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/600x400" alt="Class Event 1">
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/600x400" alt="Class Event 2">
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/600x400" alt="Class Event 3">
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/600x400" alt="Class Event 4">
+        </div>
+    </section>
+
+    <h2 id="location" class="section-title">Our Locations</h2>
+    <section class="location-section">
+        <div class="location-details">
+            <h3>ප්‍රධාන මධ්‍යස්ථාන හා Exam Centers</h3>
+            <p><strong>දිවයින පුරා මධ්‍යස්ථාන:</strong> දිවයින පුරා මධ්‍යස්ථාන 32 දී සිසුන් ප්‍රශ්න පත්‍රය සඳහා භෞතිකව සහභාගි වීමේ හැකියාව ඇත.</p>
+            <br>
+            <p><strong>ප්‍රධාන කාර්යාලය (Head Office):</strong><br> 468/1, අලුත් මාවත පාර, මාදින්නාගොඩ, රාජගිරිය</p>
+            <p><strong>Nakiyadeniya Center:</strong><br> Nakiyadeniya Public Ground අසල</p>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126743.63162586221!2d79.8562055!3d6.9270786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253d10f7a7003%3A0x320b2e4d32d3838d!2sColombo!5e0!3m2!1sen!2slk!4v1700000000000!5m2!1sen!2slk" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
     <section id="contact" class="contact-section">
         <div class="contact-form">
             <h3>අප හා සම්බන්ධ වන්න</h3>
@@ -257,7 +337,7 @@
             </form>
         </div>
         <div class="contact-info">
-            <h3>Our Head Office At Rajagiriya</h3>
+            <h3>Contact Information</h3>
             <p><strong>Address:</strong> 468/1, අලුත් මාවත පාර, මාදින්නාගොඩ, රාජගිරිය</p>
             <p><strong>Phone:</strong> +94 76 033 1104</p>
             <p><strong>Email:</strong> info@hasitha.lk</p>
@@ -266,7 +346,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Hasitha.LK. All rights reserved.</p>
+        <p>&copy; 2026 Hasitha.LK. All rights reserved.</p>
     </footer>
 
 </body>
