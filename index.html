@@ -1,1 +1,273 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echem.lk | Chemistry Education</title>
+    <style>
+        /* මූලික සැකසුම් (Reset & Base Styles) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Smooth Scrolling එකතු කිරීම */
+        html {
+            scroll-behavior: smooth;
+        }
 
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navigation Bar */
+        header {
+            background: #fff;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li a {
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #f39c12;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://uniofmora-my.sharepoint.com/:i:/g/personal/devindakadhd_22_uom_lk/IQB--_EGMo7YQqNmqiBK61PoAQdj_OtiJIWpaPqLnR2OMhY?e=q5yhld/1500x800') center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #f1c40f;
+        }
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .btn {
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-secondary { background: #fff; color: #333; }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin: 50px 0 30px;
+            color: #2c3e50;
+            padding-top: 80px; /* Menu එකට යට නොවීම සඳහා */
+            margin-top: -30px;
+        }
+
+        /* Work Process Section */
+        .process-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 50px 50px;
+        }
+        .process-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+            border-bottom: 4px solid #f39c12;
+        }
+        .process-card h3 {
+            margin-bottom: 15px;
+            color: #2980b9;
+        }
+
+        /* About Teacher Section */
+        .about-section {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            padding: 80px 50px 50px 50px; /* Menu එකට යට නොවීම සඳහා padding වෙනස් කර ඇත */
+            gap: 40px;
+        }
+        .about-image {
+            flex: 1;
+            background: url('https://via.placeholder.com/500x500') center/cover;
+            height: 400px;
+            border-radius: 10px;
+        }
+        .about-content {
+            flex: 1;
+        }
+        .about-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            display: flex;
+            padding: 80px 50px 50px 50px;
+            gap: 40px;
+            background: #ecf0f1;
+        }
+        .contact-form {
+            flex: 1;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .contact-info {
+            flex: 1;
+        }
+        .contact-info h3 { margin-bottom: 20px; }
+        .contact-info p { margin-bottom: 10px; }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #bdc3c7;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header, .about-section, .contact-section {
+                flex-direction: column;
+                padding: 20px;
+            }
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                margin-top: 15px;
+            }
+            .hero h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Echem.lk</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#process">Our Process</a></li>
+                <li><a href="#about">About Teacher</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>2023 ශ්‍රී ලංකාවේ 1 ක් සමස්ථ A ප්‍රමාණයෙන්</h1>
+        <p>එතෙක් මෙතෙක් ලංකා ඉතිහාසයේ එක් වසරකදී උසස්පෙළ රසායන විද්‍යා විෂය සඳහා 11625 A සාමාර්ථ ගණනක වාර්තාව</p>
+        <div class="hero-buttons">
+            <button class="btn btn-secondary">View Our Results</button>
+        </div>
+    </section>
+
+    <h2 id="process" class="section-title">Work Process</h2>
+    <section class="process-container">
+        <div class="process-card">
+            <h3>නිවැරදි විෂය කරුණු</h3>
+            <p>විෂය නිර්දේශය ආවරණය වන නිවැරදි විෂය කරුණු සම්පිණ්ඩණය කර සිසුන්ට ඉගැන්වීම.</p>
+        </div>
+        <div class="process-card">
+            <h3>විෂයානුබද්ධ ක්‍රියාකාරකම්</h3>
+            <p>විෂය කරුණු මතක තබා ගැනීම පහසු කිරීම උදෙසා සුවිශේෂ ක්‍රමවේද සතිපතා සිදු කිරීම.</p>
+        </div>
+        <div class="process-card">
+            <h3>විශේෂ ප්‍රශ්න පත්‍ර</h3>
+            <p>සුවිශේෂ ප්‍රශ්න පත්‍ර මඟින් සිසුන් දැනුමින් සහ අත්දැකීම් මඟින් උසස් පෙළ විභාගයට සූදානම් කරවීම.</p>
+        </div>
+        <div class="process-card">
+            <h3>නිවැරදි කාල රාමුව</h3>
+            <p>කාල රාමුවක් තුළ සිසුන් මෙහෙයවීම සහ විශිෂ්ටතම ප්‍රතිඵලයක් ලබාගැනීම සඳහා මඟපෙන්වීම.</p>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-image"></div>
+        <div class="about-content">
+            <h2>ගුරුවරයා පිළිබඳව</h2>
+            <br>
+            <p>2017 උසස් පෙළ ජීව විද්‍යා අංශයෙන් දිවයිනේ 4 වන ස්ථානයට (කොළඹ දිස්ත්‍රික් 2) සමත්ව මේ වන විට කොළඹ වෛද්‍ය පීඨයේ සිය උපාධිය අවසන් කරමින් සිටියි.</p>
+            <p>2019 දී උපකාරක පන්ති ක්ෂේත්‍රයට පිවිසෙන ඔහු වසර 4 ක් යන්නටත් පෙර දිවයිනේ එදා මෙදා තුර සමස්ථ ටියුෂන් ඉතිහාසයේම වැඩිම සිසුන් පිරිසක් සහභාගි වන රසායන විද්‍යාව පන්තිය නිර්මාණය කරන්නේ...</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-form">
+            <h3>අප හා සම්බන්ධ වන්න</h3>
+            <form action="#">
+                <input type="text" placeholder="නම:" required>
+                <input type="email" placeholder="ඊමේල් ලිපිනය:" required>
+                <textarea rows="5" placeholder="පණිවිඩය:" required></textarea>
+                <button type="submit" class="btn btn-primary" style="background: #e74c3c; color: white;">Send</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <h3>Our Head Office At Rajagiriya</h3>
+            <p><strong>Address:</strong> 468/1, අලුත් මාවත පාර, මාදින්නාගොඩ, රාජගිරිය</p>
+            <p><strong>Phone:</strong> +94 76 033 1104</p>
+            <p><strong>Email:</strong> info@hasitha.lk</p>
+            <p><strong>Working Hours:</strong> Mon-Fri: 8.00 a.m to 8.00 p.m</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Hasitha.LK. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
